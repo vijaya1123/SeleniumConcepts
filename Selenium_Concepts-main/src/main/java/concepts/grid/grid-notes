@@ -1,0 +1,422 @@
+Grid Intro
+==========
+The concept of Selenium Grid is simple. When one system is used to run Selenium tests,
+they are not as efficient as we require them to be, considering the high complexity and
+size of test cases. To speed things up, we need to connect various other systems that
+can help us execute these test cases quickly and simultaneously. By configuring these
+systems with a one-time setup, the hub can provide instructions on what to execute at
+which system and the nodes can follow that. This is also called the distribution of
+tests and is sometimes also referred to as "distributed testing".
+
+Why Grid?
+=========
+I need a tool to run the test suite in parallel. - Grid is the tool.
+How can I reduce the time for completion of the test suite. - Yes, you can do this
+with Grid.
+
+What is Grid?
+=============
+Allows us to execute test script on different machines at the same time.
+
+Selenium Grid:
+==============
+Imagine it as a traffic controller for your automated tests. It lets you run those
+tests on multiple computers at the same time, instead of just one. This makes testing
+faster and more efficient.
+
+Execution is possible on:
+=========================
+1. Different machines with different browsers.
+2. Same browser with different versions.
+
+It saves a lot of time and effort for execution.
+
+It consists of Hub and multiple Nodes.
+1. Hub works as a central point controlling all the nodes.
+2. Nodes are actual machines on which execution is done.
+
+How Selenium Grid3 Works
+========================
+It works based on Hub and Node concept.
+
+                          Hub
+                           |
+-------------------------------------------------
+|               |                 |             |
+Node1           Node2             Node3         Node4
+Firefox         Edge              Safari        Chrome
+on Ubuntu       on Windows        on Mac        on Android
+
+Hub & Node
+==========
+Hub
+===
+1. Central point where you load the tests.
+2. Only one hub in a grid.
+3. Launched only on a single machine.
+
+Node
+====
+1. Selenium instances that will executes the tests.
+2. One or More nodes in a grid.
+3. Launched on multiple machines with different platforms and browsers.
+
+Selenium Grid4:
+===============
+Think of it as a brand new, upgraded traffic controller. It's still responsible for
+sending your tests to different computers, but it's been totally rebuilt to handle
+today's complex testing needs. Here's what's new:
+
+More flexible:
+==============
+It works with more types of computers and operating systems.
+
+More powerful:
+==============
+It can handle even more tests at once and keep track of them better.
+
+More modern:
+============
+It uses newer technologies to communicate between computers, making everything faster
+and smoother.
+
+The main takeaway is that Selenium Grid4 is a major upgrade that makes running your
+automated tests on multiple computers even easier and more efficient.
+
+Components of Selenium Grid4 – Architecture
+===========================================
+Selenium Grid4 provides its users with software that can deal with high-paced computing
+environments with integrated cloud services and much more. This is made possible through
+the following set of components:
+
+1. Router
+2. Session Map
+3. Distributor
+4. New Session Queue
+5. Node
+6. Event Bus
+
+Imagine Selenium Grid as a busy airport, with different teams working together to get
+passengers (tests) to their destinations (nodes) smoothly:
+
+1. Router:
+==========
+1. Like an air traffic controller, it receives all incoming flight requests (tests)
+   and decides where to send them.
+2. It checks for ongoing flights (existing sessions) and sends those directly to the
+   right gate (node).
+3. For new flights (new tests), it puts them in a waiting line (session queue).
+4. It also makes sure no gates (nodes) get too crowded with flights (tests).
+
+2. Session Map:
+===============
+1. Like a flight schedule board, it keeps track of which flights (sessions) are at which
+   gates (nodes).
+2. The router uses this information to quickly direct ongoing flights to the correct gate.
+
+3. Distributor:
+===============
+1. Like a gate agent, it assigns new flights (tests) to available gates (nodes).
+2. It updates the flight schedule board (session map) with this information.
+3. It also keeps a list of all the airport's gates (nodes) and their capabilities.
+
+4. New Session Queue:
+=====================
+1. Like a waiting area for passengers, it holds new flights (tests) until a gate (node)
+   is ready for them.
+2. It works on a first-come, first-served basis.
+
+5. Event Bus:
+=============
+Like an airport intercom system, it allows different teams to communicate quickly and
+efficiently without making a bunch of phone calls (HTTP requests).
+
+6. Node:
+========
+1. Like an individual gate, it's where the actual flights (tests) take place.
+2. Each gate has its own features (browsers, devices, etc.) for handling specific types
+   of flights (tests).
+3. Nodes follow instructions from the gate agent (distributor) without questioning them.
+
+Together, these components work as a well-oiled machine to get passengers (tests) to their
+destinations (nodes) quickly and efficiently!
+
+Prominent Features of Selenium Grid4
+====================================
+When a tester opts for Selenium Grid, they take advantage of the following features:
+
+1. Free and Open Source:
+========================
+Everyone can use Selenium Grid for free, and its large community offers support and
+guidance whenever you need it.
+
+2. Flexible:
+============
+Selenium Grid works on many different operating systems and browsers, including older
+versions. Testers can run tests on different combinations of these to ensure wide
+compatibility.
+
+3. Your Language, Your Choice:
+==============================
+Selenium Grid supports many programming languages, allowing you to write tests in the
+language you know best.
+
+4. Cloud Power:
+===============
+Instead of tying up your own resources, Selenium Grid can run tests in the cloud, making
+it faster and more reliable.
+
+5. Test Speed Boost:
+====================
+Selenium Grid lets you run multiple tests simultaneously on different computers, saving
+you tons of time.
+
+6. Plays Nice with Others:
+==========================
+Selenium Grid can integrate with various tools and cloud platforms, streamlining your
+testing workflow.
+
+Think of Selenium Grid as your friendly test-running robot army. It's free, flexible,
+speaks your language, thrives in the cloud, speeds things up, and gets along with everyone.
+
+What's different in Selenium Grid4? Comparison with Selenium Grid3
+==================================================================
+The most appreciated feature of Selenium Grid4 is its army of components dedicated to
+doing their fixed separate tasks and expanding the power of the grid. This structure
+was shown in the image above. On the contrary, Selenium Grid3 worked on just two components:
+
+1. Hub
+2. Nodes
+
+Code disassociation
+===================
+Selenium Grid4 code is written fresh and has no association with Selenium Grid3 code.
+This removes any complex dependencies that prevent covering the loopholes of the system.
+
+Configuration methods
+=====================
+While Selenium Grid3 can be configured by just the Hub-Node method, Selenium Grid4 provides
+four options for its configuration. They are:
+
+1. Standalone
+2. Hub-Node
+3. Distributed
+4. Docker
+
+This provides flexibility to the tester, which is always a good thing in the software industry.
+
+Single Jar for everything
+=========================
+Selenium Grid4 provides a single jar for everything that you may need to set up the Grid
+on your infrastructure. This includes the required dependencies; therefore, the setup time,
+maintenance, and complexity are reduced drastically.
+
+Apart from these major differentiators, obviously, we get improved performance, more features,
+and a much stronger grid to work on.
+
+How to install Selenium Grid4?
+==============================
+1. Download and keep the selenium-server-4.16.1.jar file.
+2. Suggested to place the above jar file at the same location / inside a folder
+   on your CWD.
+
+Things to Remember
+==================
+When you are going for grid setup, please make sure that the firewall setting
+is turned off.
+
+How to Configure Selenium Grid4?
+================================
+
+Setting grid with secure communication and node registration
+============================================================
+java -jar selenium-server-4.16.1.jar info security
+
+Get configuration help
+======================
+java -jar selenium-server-4.16.1.jar info config
+
+If the tester wishes to use a separate session storage than local storage
+java -jar selenium-server-4.16.1.jar info sessionmap
+
+Export traces
+=============
+java -jar selenium-server-4.16.1.jar info tracing
+
+Get help to know all the Selenium Grid commands
+===============================================
+java -jar selenium-server-4.16.1.jar –config-help
+
+To get help based on a specific component
+=========================================
+java -jar selenium-server-4.16.1.jar <method> –help
+
+For standalone use
+==================
+java -jar selenium-server-4.16.1.jar standalone –help
+
+For node session queue
+======================
+java -jar selenium-server-4.16.1.jar sessionqueue –help
+
+For distributor
+===============
+java -jar selenium-server-4.16.1.jar distributor –help
+
+For router
+==========
+java -jar selenium-server-4.16.1.jar router –help
+
+For node
+========
+java -jar selenium-server-4.16.1.jar node –help
+
+Setting max sessions as 3 on standalone mode
+============================================
+java -jar selenium-server-4.16.1.jar standalone –max-sessions 4 –port 4444
+
+Setting a session request timeout on Hub and disabling tracing
+==============================================================
+java -jar selenium-server-4.16.1.jar hub –session-request-timeout 500 –port 3333 –tracing false
+
+Setting session map server URL and server queue server URL
+==========================================================
+java -jar selenium-server-4.16.1.jar distributor –sessions http://localhost:5556 –sessionqueue http://localhost:5559
+
+To start the Hub
+================
+java -jar selenium-server-4.16.1.jar hub
+
+By default, the Hub will run on http://192.168.1.5:"4444" port. To change the
+port,
+java -jar selenium-server-4.16.1.jar hub -port 4441
+
+Netstat -a -> To get the list of ports used.
+
+To start a Node
+===============
+java -jar selenium-server-4.16.1.jar node
+
+To start a Hub and Node as Localhost
+====================================
+Hub
+===
+java -jar selenium-server-4.16.1.jar hub --port 4444 --host localhost
+
+Node
+====
+java -jar selenium-server-4.16.1.jar node --port 5555 --host localhost --hub http://localhost:4444/grid/register
+
+Start a node with custom capabilities
+=====================================
+java -jar selenium-server-4.16.1.jar node –detect-drivers false –driver-configuration display-name="Chrome (custom capability true)" max-sessions=1 stereotype='{"browserName":"chrome","gsg:customcap":true}' –port 6161
+
+Advantages of using Selenium Grid
+=================================
+Scalability and Speed:
+======================
+Selenium Grid makes testing faster by running tests at the same time on different browsers
+and systems. This means quicker testing and shorter wait times.
+
+Cost-Effective:
+===============
+It saves money by efficiently using resources. You can share browser setups across tests,
+cutting down on hardware and software expenses.
+
+Cross-Browser Testing:
+======================
+It ensures that your website or app works well on various browsers by letting you test
+them all at once.
+
+Better Test Coverage:
+=====================
+Running tests on multiple systems simultaneously helps catch more issues, making your
+tests more reliable.
+
+Real-Time Monitoring:
+=====================
+With VNC support, you can watch tests as they happen, making it easier to fix problems
+and work better as a team.
+
+Drawbacks of using Selenium Grid
+================================
+Dedicated Resources:
+====================
+Using Selenium Grid requires separate systems (nodes) with their own operating systems
+and browsers. This can get expensive, especially for individuals or small companies.
+
+High Maintenance:
+=================
+These separate systems need constant attention and care. As you add more systems, the
+maintenance work grows, leading to higher costs and needing more engineers to manage
+everything.
+
+Scaling Challenges:
+===================
+It's tough to scale Selenium Grid to cover all possible combinations of operating systems,
+browsers, and devices. This might mean compromising on testing quality due to limitations
+in scalability.
+
+Reconfiguration Hassles:
+========================
+Making changes in Selenium Grid settings, which are done manually through IPs and URLs,
+can be very costly and time-consuming.
+
+Security Risks:
+===============
+As Selenium Grid is often managed in-house without strict security measures, there's a
+risk of vulnerabilities. Without proper security protocols, it could pose a significant
+risk to the system's safety and data integrity.
+
+Running tests using Grid
+========================
+driver = new RemoteWebDriver(URI.create("http://192.168.1.5:4444").toURL(), capabilities);
+
+To customize the Node
+=====================
+DesiredCapabilities capabilities = new DesiredCapabilities();
+capabilities.setPlatform(Platform.ANY);
+capabilities.setBrowserName("chrome");
+
+Running parallel tests using testNG with Grid
+=============================================
+Node with Chrome browser
+========================
+DesiredCapabilities capabilities = new DesiredCapabilities();
+capabilities.setPlatform(Platform.ANY);
+capabilities.setBrowserName("chrome");
+
+Node with Edge browser
+======================
+DesiredCapabilities capabilities = new DesiredCapabilities();
+capabilities.setPlatform(Platform.ANY);
+capabilities.setBrowserName("MicrosoftEdge");
+
+<suite name="Default Suite" parallel="tests">
+    <test thread-count="5" name="Chrome_Google">
+        <classes>
+            <class name="concepts.grid.parallel.HubWithNodeBrowser1Test"/>
+        </classes>
+    </test>
+    <test thread-count="5" name="Edge_Selenium">
+        <classes>
+            <class name="concepts.grid.parallel.HubWithNodeBrowser2Test"/>
+        </classes>
+    </test>
+</suite>
+
+Selenium Server Commands
+========================
+A list of all the commands available. To use one, run 'java -jar selenium.jar
+commandName'.
+
+  completion    Generate shell autocompletion
+  distributor   Adds this server as the distributor in a selenium grid.
+  hub           A grid hub, composed of sessions, distributor, and router.
+  info          Prints information for commands and topics.
+  node          Adds this server as a Node in the Selenium Grid.
+  router        Creates a router to front the selenium grid.
+  sessionqueue  Adds this server as the new session queue in a selenium grid.
+  sessions      Adds this server as the session map in a selenium grid.
+  standalone    The selenium server, running everything in-process.
+
